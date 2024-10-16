@@ -86,117 +86,143 @@
     <script>
         const equations = [
             {
-                equation: "\\(17 + (o + 74) = (74 + 17) + 6\\)",
+                equation: "\\[ \\frac{6}{x} = \\frac{3}{4} \\]",
                 steps: [
                     {
-                        prompt: "Simplifica el lado izquierdo:",
+                        prompt: "Multiplicamos ambos lados por \( x \):",
                         type: "select",
-                        options: ["\\(o + 91\\)", "\\(o + 57\\)", "\\(o + 107\\)"],
+                        options: [
+                            "\\(6 = \\frac{3}{4} x\\)",
+                            "\\(\\frac{6x}{x} = \\frac{3}{4} x\\)",
+                            "\\(6x = \\frac{3}{4}\\)"
+                        ],
                         correctOption: 0,
                         hints: [
-                            "Suma 17 y 74.",
-                            "17 + 74 = 91.",
-                            "Entonces, el lado izquierdo es \\(o + 91\\)."
+                            "Al multiplicar ambos lados por \( x \), el \( x \) en el denominador se elimina en el lado izquierdo.",
+                            "La ecuación queda: \(6 = \\frac{3}{4} x\\)."
                         ]
                     },
                     {
-                        prompt: "Simplifica el lado derecho:",
+                        prompt: "Multiplicamos ambos lados por 4 para eliminar el denominador:",
                         type: "select",
-                        options: ["\\(97\\)", "\\(91\\)", "\\(87\\)"],
+                        options: [
+                            "\\(24 = 3x\\)",
+                            "\\(6 = 3x\\)",
+                            "\\(24 = \\frac{3}{4} x\\)"
+                        ],
                         correctOption: 0,
                         hints: [
-                            "Suma 74 y 17.",
-                            "74 + 17 = 91.",
-                            "Ahora suma 91 + 6.",
-                            "91 + 6 = 97."
+                            "Multiplica ambos lados por 4: \(4 \\times 6 = 4 \\times \\frac{3}{4} x\\).",
+                            "Esto simplifica a \(24 = 3x\\)."
                         ]
                     },
                     {
-                        prompt: "Escribe la nueva ecuación simplificada:",
-                        type: "select",
-                        options: ["\\(o + 91 = 97\\)", "\\(o + 74 = 97\\)", "\\(o + 91 = 91\\)"],
-                        correctOption: 0,
-                        hints: [
-                            "El lado izquierdo es \\(o + 91\\) y el derecho es 97.",
-                            "La ecuación es \\(o + 91 = 97\\)."
-                        ]
-                    },
-                    {
-                        prompt: "¿Qué operación realizamos para despejar \( o \)?",
-                        type: "select",
-                        options: ["Restar 91 en ambos lados", "Sumar 91 en ambos lados", "Dividir ambos lados entre 91"],
-                        correctOption: 0,
-                        hints: [
-                            "Queremos aislar \( o \).",
-                            "Como está sumando 91, restamos 91 en ambos lados."
-                        ]
-                    },
-                    {
-                        prompt: "Calcula el valor de \( o \): \( o = 97 - 91 = \)",
+                        prompt: "Dividimos ambos lados entre 3 para despejar \( x \):",
                         type: "input",
-                        correctAnswer: "6",
+                        correctAnswer: "8",
                         hints: [
-                            "97 - 91 = 6.",
-                            "Entonces, \( o = 6 \)."
+                            "Divide ambos lados entre 3: \( \\frac{24}{3} = x \\).",
+                            "Así, \( x = 8 \\)."
                         ]
                     }
                 ]
             },
-            // Añade más ecuaciones siguiendo el mismo formato...
             {
-                equation: "\\(27 + 24 = 24 + e\\)",
+                equation: "\\[ \\frac{-4}{v} = \\frac{1}{2} \\]",
                 steps: [
                     {
-                        prompt: "Simplifica el lado izquierdo:",
+                        prompt: "Multiplicamos ambos lados por \( v \):",
+                        type: "select",
+                        options: [
+                            "\\(-4 = \\frac{1}{2} v\\)",
+                            "\\(-4v = \\frac{1}{2}\\)",
+                            "\\(\\frac{-4v}{v} = \\frac{1}{2} v\\)"
+                        ],
+                        correctOption: 0,
+                        hints: [
+                            "Al multiplicar ambos lados por \( v \), el \( v \) en el denominador se elimina en el lado izquierdo.",
+                            "La ecuación queda: \(-4 = \\frac{1}{2} v\\)."
+                        ]
+                    },
+                    {
+                        prompt: "Multiplicamos ambos lados por 2 para eliminar el denominador:",
+                        type: "select",
+                        options: [
+                            "\\(-8 = v\\)",
+                            "\\(-4 = v\\)",
+                            "\\(-2 = v\\)"
+                        ],
+                        correctOption: 0,
+                        hints: [
+                            "Multiplica ambos lados por 2: \(2 \\times -4 = 2 \\times \\frac{1}{2} v\\).",
+                            "Esto simplifica a \(-8 = v\\)."
+                        ]
+                    },
+                    {
+                        prompt: "El valor de \( v \) es:",
                         type: "input",
-                        correctAnswer: "51",
+                        correctAnswer: "-8",
                         hints: [
-                            "Suma 27 y 24.",
-                            "27 + 24 = 51."
-                        ]
-                    },
-                    {
-                        prompt: "Simplifica el lado derecho:",
-                        type: "select",
-                        options: ["\\(24 + e\\)", "\\(e + 24\\)", "\\(27 + e\\)"],
-                        correctOption: 0,
-                        hints: [
-                            "El lado derecho ya está simplificado.",
-                            "Es \\(24 + e\\)."
-                        ]
-                    },
-                    {
-                        prompt: "Escribe la nueva ecuación simplificada:",
-                        type: "select",
-                        options: ["\\(51 = 24 + e\\)", "\\(51 = 27 + e\\)", "\\(51 = e + 27\\)"],
-                        correctOption: 0,
-                        hints: [
-                            "El lado izquierdo es 51 y el derecho es \\(24 + e\\).",
-                            "Entonces, \\(51 = 24 + e\\)."
-                        ]
-                    },
-                    {
-                        prompt: "¿Qué operación realizamos para despejar \( e \)?",
-                        type: "select",
-                        options: ["Restar 24 en ambos lados", "Sumar 24 en ambos lados", "Multiplicar ambos lados por 24"],
-                        correctOption: 0,
-                        hints: [
-                            "Queremos aislar \( e \).",
-                            "Como está sumando 24, restamos 24 en ambos lados."
-                        ]
-                    },
-                    {
-                        prompt: "Calcula el valor de \( e \): \( e = 51 - 24 = \)",
-                        type: "input",
-                        correctAnswer: "27",
-                        hints: [
-                            "51 - 24 = 27.",
-                            "Entonces, \( e = 27 \)."
+                            "Ya tenemos \(-8 = v\), por lo tanto, \( v = -8 \\)."
                         ]
                     }
                 ]
             },
-            // Continúa agregando las demás ecuaciones aquí...
+            {
+                equation: "\\[ 9 = 3y \\]",
+                steps: [
+                    {
+                        prompt: "Dividimos ambos lados entre 3 para despejar \( y \):",
+                        type: "input",
+                        correctAnswer: "3",
+                        hints: [
+                            "Divide ambos lados entre 3: \( \\frac{9}{3} = y \\).",
+                            "Así, \( y = 3 \\)."
+                        ]
+                    }
+                ]
+            },
+            {
+                equation: "\\[ -2 = \\frac{-k}{5} \\]",
+                steps: [
+                    {
+                        prompt: "Multiplicamos ambos lados por 5 para eliminar el denominador:",
+                        type: "select",
+                        options: [
+                            "\\(-10 = -k\\)",
+                            "\\(-2 = -5k\\)",
+                            "\\(-10 = k\\)"
+                        ],
+                        correctOption: 0,
+                        hints: [
+                            "Multiplica ambos lados por 5: \(5 \\times -2 = 5 \\times \\frac{-k}{5}\\).",
+                            "Esto simplifica a \(-10 = -k\\)."
+                        ]
+                    },
+                    {
+                        prompt: "Multiplicamos ambos lados por \(-1\) para despejar \( k \):",
+                        type: "select",
+                        options: [
+                            "\\(k = 10\\)",
+                            "\\(k = -10\\)",
+                            "\\(k = 0\\)"
+                        ],
+                        correctOption: 0,
+                        hints: [
+                            "Multiplicando por \(-1\), cambiamos el signo de ambos lados.",
+                            "Así, \( k = 10 \\)."
+                        ]
+                    },
+                    {
+                        prompt: "El valor de \( k \) es:",
+                        type: "input",
+                        correctAnswer: "10",
+                        hints: [
+                            "Ya hemos encontrado que \( k = 10 \\)."
+                        ]
+                    }
+                ]
+            }
         ];
 
         let currentEquationIndex = 0;
